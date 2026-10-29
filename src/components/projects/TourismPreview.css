@@ -1,0 +1,308 @@
+
+/* ==========================================
+   TOURISM RECOMMENDATION PROJECT PREVIEW
+   HASSAN JAN PORTFOLIO
+========================================== */
+
+.tourism-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px 17px;
+
+  color: #fff2df;
+  background:
+    radial-gradient(
+      circle at 75% 10%,
+      #a67853 0%,
+      transparent 52%
+    ),
+    linear-gradient(145deg, #56382c, #865b43);
+}
+
+.tourism-preview__header,
+.tourism-preview__brand,
+.tourism-preview__header-label {
+  display: flex;
+  align-items: center;
+}
+
+.tourism-preview__header {
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+
+.tourism-preview__brand {
+  gap: 8px;
+}
+
+.tourism-preview__brand-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 237, 210, 0.3);
+  border-radius: 10px;
+}
+
+.tourism-preview__brand strong,
+.tourism-preview__brand small {
+  display: block;
+}
+
+.tourism-preview__brand strong {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.tourism-preview__brand small {
+  margin-top: 3px;
+  color: #ecc5a0;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+
+.tourism-preview__header-label {
+  gap: 3px;
+  color: #f8d4b1;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Main illustrative application window */
+
+.tourism-preview__window {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 17px;
+  border-radius: 14px 14px 0 0;
+  background: #f8f0e6;
+  color: #4c3326;
+  box-shadow: 0 20px 35px rgba(35, 17, 9, 0.18);
+}
+
+.tourism-preview__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a17353;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.tourism-preview__headline {
+  margin: 12px 0 15px;
+  font-family: var(--font-display);
+  font-size: clamp(29px, 3.15vw, 48px);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.tourism-preview__headline span {
+  display: block;
+  color: #b37b55;
+}
+
+.tourism-preview__search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid #edddc9;
+  border-radius: 30px;
+  background: white;
+  color: #957b68;
+  font-size: 10px;
+}
+
+.tourism-preview__search span {
+  flex: 1;
+  min-width: 0;
+}
+
+.tourism-preview__section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 20px 0 12px;
+}
+
+.tourism-preview__section-heading span,
+.tourism-preview__section-heading small {
+  display: block;
+}
+
+.tourism-preview__section-heading span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.tourism-preview__section-heading small {
+  margin-top: 4px;
+  color: #9b8878;
+  font-size: 8px;
+}
+
+.tourism-preview__section-heading svg {
+  color: #bc855e;
+}
+
+.tourism-preview__destinations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tourism-preview__destination {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 9px;
+  background: white;
+  box-shadow: 0 4px 14px rgba(71, 43, 26, 0.06);
+  transition: transform 350ms ease;
+}
+
+.project-card:hover .tourism-preview__destination:first-child {
+  transform: translateY(-5px);
+}
+
+.project-card:hover .tourism-preview__destination:last-child {
+  transform: translateY(4px);
+}
+
+.tourism-preview__landscape {
+  position: relative;
+  height: 78px;
+  overflow: hidden;
+  background: linear-gradient(#9dc4c6, #e8c9a1);
+}
+
+.tourism-preview__destination--skardu
+.tourism-preview__landscape {
+  background: linear-gradient(#91afce, #d5c8c0);
+}
+
+.tourism-preview__sun {
+  position: absolute;
+  top: 13px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff3cb;
+  box-shadow: 0 0 20px #fff1cd;
+}
+
+.tourism-preview__mountain {
+  position: absolute;
+  bottom: -35px;
+  width: 110%;
+  height: 85px;
+  clip-path: polygon(
+    0 100%,
+    35% 15%,
+    56% 56%,
+    75% 5%,
+    100% 100%
+  );
+}
+
+.tourism-preview__mountain--back {
+  left: -10%;
+  background: #8a9c8c;
+}
+
+.tourism-preview__mountain--front {
+  left: 14%;
+  bottom: -48px;
+  background: #4f7667;
+}
+
+.tourism-preview__destination--skardu
+.tourism-preview__mountain--back {
+  background: #7b8ca0;
+}
+
+.tourism-preview__destination--skardu
+.tourism-preview__mountain--front {
+  background: #516a80;
+}
+
+.tourism-preview__destination-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 8px;
+}
+
+.tourism-preview__destination-info strong {
+  font-size: 10px;
+  color: #553b2c;
+}
+
+.tourism-preview__destination-info span {
+  color: #9e8876;
+  font-size: 8px;
+}
+
+/* Feature badges */
+
+.tourism-preview__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.tourism-preview__features > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 8px;
+  border-radius: 20px;
+  background: #efe2d2;
+  color: #79533d;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.tourism-preview__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  color: #f4d8bb;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+@media (max-width: 700px) {
+  .tourism-preview {
+    padding: 15px;
+  }
+
+  .tourism-preview__window {
+    padding: 14px;
+  }
+
+  .tourism-preview__headline {
+    font-size: clamp(30px, 8vw, 44px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tourism-preview__destination {
+    transition: none;
+  }
+}

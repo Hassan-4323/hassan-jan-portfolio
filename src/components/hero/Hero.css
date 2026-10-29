@@ -1,0 +1,436 @@
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 65%,
+      #fff3df 0%,
+      #f8e7d2 48%,
+      transparent 82%
+    ),
+    linear-gradient(
+      145deg,
+      #fff0dc 0%,
+      #efd5b9 100%
+    );
+
+  color: var(--color-brown-dark);
+}
+
+/* BACKGROUND TEXTURE */
+
+.hero__texture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  opacity: 0.15;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(70, 39, 19, 0.025) 4px
+  );
+}
+
+/* OVERSIZED PORTFOLIO TYPOGRAPHY */
+
+.hero__background-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+
+  width: max-content;
+  max-width: none;
+  transform: translateX(-50%);
+
+  font-family: var(--font-display);
+  font-size: min(20.5vw, 45vh);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.052em;
+  white-space: nowrap;
+
+  background: linear-gradient(
+    180deg,
+    #352015 0%,
+    #67412b 53%,
+    #b1825f 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* CENTRAL PORTRAIT */
+
+.hero__portrait {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: -5%;
+
+  height: 86%;
+  width: auto;
+
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  pointer-events: none;
+}
+
+.hero__portrait-image {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: bottom center;
+
+  filter: drop-shadow(
+    0 12px 18px rgba(60, 35, 19, 0.09)
+  );
+}
+
+/* LEFT AND RIGHT CONTENT */
+
+.hero__content {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 12%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+
+  width: calc(100% - (var(--page-padding) * 2));
+  max-width: var(--section-width);
+
+  transform: translateX(-50%);
+}
+
+/* LEFT INTRODUCTION */
+
+.hero__intro {
+  flex: 0 1 36%;
+  min-width: 0;
+  max-width: 590px;
+}
+
+.hero__greeting {
+  margin: 0 0 9px 3px;
+  font-size: clamp(10px, 0.9vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.48em;
+}
+
+.hero__name {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 0.15em;
+
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(50px, 6.9vw, 128px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  color: #402a1c;
+}
+
+.hero__name span {
+  display: inline-block;
+}
+
+.hero__name-last {
+  color: var(--color-brown);
+}
+
+.hero__profession-wrap {
+  margin-top: 14px;
+}
+
+.hero__profession {
+  display: inline-block;
+  margin: 0;
+  padding-top: 10px;
+
+  border-top: 3px solid var(--color-brown);
+
+  font-size: clamp(10px, 1.05vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+}
+
+/* RIGHT SKILLS */
+
+.hero__specialties {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 30%;
+  min-width: 0;
+  max-width: 440px;
+
+  gap: clamp(12px, 1.5vw, 23px);
+  padding: 6px 0 6px 22px;
+  border-left: 3px solid var(--color-brown);
+}
+
+.hero__specialty {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+
+  color: #402a1c;
+  font-size: clamp(12px, 1.07vw, 18px);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hero__specialty svg,
+.hero__specialty-label {
+  flex-shrink: 0;
+}
+
+.hero__specialty-line {
+  flex: 1;
+  min-width: 0;
+  height: 1px;
+  margin-left: 7px;
+  background: #a97652;
+  opacity: 0.65;
+}
+
+/* FOOTER — LABELS AT OPPOSITE EDGES */
+
+.hero__footer {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+  width: calc(100% - (var(--page-padding) * 2));
+  max-width: var(--section-width);
+
+  transform: translateX(-50%);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+.hero__footer-divider {
+  display: none;
+}
+
+/* SHORT DESKTOP SCREENS */
+
+@media (min-width: 701px) and (max-height: 800px) {
+  .hero__background-title {
+    font-size: min(20.5vw, 44vh);
+  }
+
+  .hero__portrait {
+    height: 84%;
+    bottom: -5%;
+  }
+
+  .hero__content {
+    bottom: 12%;
+  }
+
+  .hero__name {
+    font-size: clamp(46px, 6vw, 105px);
+  }
+
+  .hero__specialties {
+    gap: 13px;
+  }
+
+  .hero__footer {
+    bottom: 13px;
+  }
+}
+
+/* TABLET AND NARROW DESKTOP */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .hero__background-title {
+    font-size: 20.5vw;
+  }
+
+  .hero__portrait {
+    height: 78%;
+  }
+
+  .hero__content {
+    gap: 14px;
+  }
+
+  .hero__intro {
+    flex-basis: 39%;
+  }
+
+  .hero__name {
+    font-size: clamp(44px, 6.3vw, 80px);
+  }
+
+  .hero__profession {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero__specialties {
+    flex-basis: 32%;
+    gap: 11px;
+    padding-left: 12px;
+  }
+
+  .hero__specialty {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .hero__specialty svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero__footer {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .hero {
+    height: 100svh;
+    min-height: 0;
+  }
+
+  .hero__background-title {
+    top: 4%;
+    font-size: 23vw;
+  }
+
+  .hero__portrait {
+    top: 11%;
+    bottom: auto;
+    height: 47%;
+    max-width: 86%;
+  }
+
+  .hero__content {
+    bottom: 65px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    width: calc(100% - 36px);
+  }
+
+  .hero__intro {
+    flex: none;
+    width: 100%;
+  }
+
+  .hero__greeting {
+    margin-bottom: 5px;
+    font-size: 9px;
+  }
+
+  .hero__name {
+    font-size: clamp(42px, 13.5vw, 85px);
+    line-height: 1.05;
+  }
+
+  .hero__profession-wrap {
+    margin-top: 8px;
+  }
+
+  .hero__profession {
+    padding-top: 7px;
+    border-top-width: 2px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .hero__specialties {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    gap: 8px;
+
+    padding: 0 0 0 12px;
+    border-left-width: 2px;
+  }
+
+  .hero__specialty {
+    gap: 9px;
+    font-size: 11px;
+  }
+
+  .hero__specialty svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .hero__footer {
+    bottom: 12px;
+    width: calc(100% - 36px);
+    font-size: 7px;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* SHORT MOBILE VIEWPORTS */
+
+@media (max-width: 700px) and (max-height: 680px) {
+  .hero__portrait {
+    top: 8%;
+    height: 41%;
+  }
+
+  .hero__content {
+    bottom: 42px;
+    gap: 9px;
+  }
+
+  .hero__name {
+    font-size: clamp(36px, 11.5vw, 65px);
+  }
+
+  .hero__specialties {
+    gap: 5px;
+  }
+
+  .hero__footer {
+    bottom: 8px;
+  }
+}

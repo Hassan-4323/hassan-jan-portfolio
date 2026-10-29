@@ -1,0 +1,759 @@
+
+/* ==============================================
+   HASSAN JAN PORTFOLIO
+   PHASE 9D — GALAXY A55 MOBILE OPTIMIZATION
+
+   Primary target: 360 × 800 CSS pixels
+   Applied to phones up to 400px wide.
+
+   Import this file AFTER all existing styles.
+============================================== */
+
+@media (max-width: 400px) {
+
+  /* ==========================================
+     GLOBAL MOBILE RULES
+  ========================================== */
+
+  html {
+    width: 100%;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body,
+  #root,
+  .portfolio-app {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .portfolio-app {
+    overflow-x: clip;
+  }
+
+  section {
+    max-width: 100%;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+  /* Keep anchored sections visible below
+     the floating navigation. */
+
+  #home,
+  #projects,
+  #more-work,
+  #final-showcase,
+  #contact {
+    scroll-margin-top: 22px;
+  }
+
+  /* ==========================================
+     01 — HERO
+     PORTRAIT ON TOP, INFORMATION BELOW
+  ========================================== */
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 680px;
+    overflow: hidden;
+  }
+
+  .hero__background-title {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+
+    width: max-content;
+    max-width: none;
+    margin: 0;
+
+    font-size: 18.3vw;
+    line-height: 1;
+    letter-spacing: -0.055em;
+    white-space: nowrap;
+
+    transform: translateX(-50%);
+  }
+
+  /* This does not modify the portrait image
+     or change your actual facial appearance. */
+
+  .hero__portrait {
+    position: absolute;
+    z-index: 2;
+
+    top: 13%;
+    bottom: auto;
+    left: 50%;
+
+    width: auto;
+    height: 39%;
+    max-width: 90%;
+
+    transform: translateX(-50%);
+    transform-origin: center bottom;
+  }
+
+  .hero__portrait-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  /* Keep the text in the lower part
+     instead of overlapping the portrait. */
+
+  .hero__content {
+    position: absolute;
+    z-index: 3;
+
+    top: 56%;
+    bottom: 38px;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+
+    width: calc(100% - 32px);
+    max-width: none;
+    min-width: 0;
+
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+
+    transform: translateX(-50%);
+  }
+
+  .hero__intro {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .hero__greeting {
+    margin: 0 0 6px;
+
+    font-size: 9px;
+    letter-spacing: 0.23em;
+  }
+
+  .hero__name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 0 0.13em;
+    margin: 0;
+
+    font-size: clamp(39px, 12vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+  }
+
+  .hero__profession-wrap {
+    margin-top: 8px;
+  }
+
+  .hero__profession {
+    display: inline-block;
+    max-width: 100%;
+    padding-top: 7px;
+
+    font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: 0.09em;
+    white-space: normal;
+  }
+
+  /* Two columns for the four specialties. */
+
+  .hero__specialties {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+    flex: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    gap: 12px 8px;
+
+    margin: 0;
+    padding: 12px 0 0;
+
+    border-left: 0;
+    border-top: 1px solid rgba(
+      64, 42, 28, 0.28
+    );
+  }
+
+  .hero__specialty {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    min-width: 0;
+
+    font-size: 10px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .hero__specialty svg {
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  .hero__specialty-label {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  .hero__specialty-line {
+    display: none;
+  }
+
+  .hero__footer {
+    position: absolute;
+    z-index: 4;
+
+    left: 50%;
+    bottom: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: calc(100% - 32px);
+    gap: 8px;
+
+    font-size: 6px;
+    line-height: 1.5;
+    letter-spacing: 0.035em;
+
+    transform: translateX(-50%);
+  }
+
+  /* ==========================================
+     02 — SEARCH TRANSITION
+  ========================================== */
+
+  .search-transition {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .search-transition__content {
+    width: calc(100% - 30px);
+    max-width: 100%;
+  }
+
+  .search-transition__heading {
+    max-width: 100%;
+    font-size: clamp(31px, 9vw, 39px);
+    line-height: 1.08;
+  }
+
+  .search-transition__searchbox {
+    width: 100%;
+    min-height: 61px;
+
+    gap: 5px;
+    padding: 10px 11px;
+    border-radius: 40px;
+  }
+
+  .search-transition__query {
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .search-transition__search-icon {
+    flex-shrink: 0;
+  }
+
+  .search-transition__search-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .search-transition__arrow {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+  }
+
+  /* ==========================================
+     03 — SELECTED WORK
+  ========================================== */
+
+  .projects-section {
+    padding: 72px 15px 38px;
+  }
+
+  .projects-section__intro {
+    margin-bottom: 28px;
+  }
+
+  .projects-section__intro h2 {
+    font-size: clamp(38px, 10.5vw, 48px);
+    line-height: 0.97;
+  }
+
+  .projects-section__description {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .projects-section__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .projects-section__grid > * {
+    grid-column: auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .project-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .project-card__visual {
+    height: 325px;
+  }
+
+  .project-card__details h3 {
+    font-size: clamp(30px, 9vw, 40px);
+  }
+
+  /* Compact tourism illustration so
+     destination features remain visible. */
+
+  .tourism-preview {
+    padding: 13px;
+  }
+
+  .tourism-preview__window {
+    padding: 12px;
+  }
+
+  .tourism-preview__headline {
+    font-size: 29px;
+  }
+
+  .tourism-preview__landscape {
+    height: 52px;
+  }
+
+  .tourism-preview__section-heading {
+    margin-top: 12px;
+  }
+
+  /* ==========================================
+     04 — TECH UNIVERSE
+  ========================================== */
+
+  .tech-universe {
+    padding: 77px 15px 40px;
+  }
+
+  .tech-universe__header {
+    gap: 17px;
+    margin-bottom: 25px;
+  }
+
+  .tech-universe__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  .tech-universe__title {
+    font-size: clamp(51px, 14.5vw, 59px);
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+  }
+
+  .tech-universe__description {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .tech-universe__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .tech-universe__visual {
+    min-height: 335px;
+    border-radius: 18px;
+  }
+
+  .tech-universe__orbit {
+    width: 100%;
+    min-height: 285px;
+  }
+
+  .tech-universe__center {
+    width: 92px;
+  }
+
+  .tech-universe__center-content {
+    gap: 4px;
+  }
+
+  .tech-universe__center-content strong {
+    font-size: 10px;
+  }
+
+  .tech-universe__center-content > span {
+    font-size: 7px;
+  }
+
+  .tech-universe__center-content svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .tech-universe__node {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+  }
+
+  .tech-universe__node span {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+
+  .tech-universe__node-one {
+    left: 10%;
+  }
+
+  .tech-universe__node-two {
+    right: 9%;
+  }
+
+  .tech-universe__node-three {
+    left: 9%;
+  }
+
+  .tech-universe__node-four {
+    right: 9%;
+  }
+
+  .tech-universe__node-five {
+    top: 3%;
+  }
+
+  .tech-universe__visual-footer {
+    padding: 13px 11px;
+    font-size: 7px;
+    letter-spacing: 0.035em;
+  }
+
+  .tech-universe__panel {
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .tech-universe__panel-top {
+    padding: 17px 13px;
+  }
+
+  .tech-universe__categories {
+    gap: 5px;
+    padding: 0 12px;
+  }
+
+  .tech-universe__category {
+    min-height: 53px;
+    padding: 6px 3px;
+
+    font-size: 9px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .tech-universe__panel-body {
+    padding: 22px 15px;
+  }
+
+  .tech-universe__panel-body h3 {
+    font-size: clamp(37px, 10vw, 45px);
+    line-height: 1;
+  }
+
+  .tech-universe__panel-body > p {
+    font-size: 12px;
+  }
+
+  .tech-universe__skills {
+    gap: 7px;
+  }
+
+  .tech-universe__skill {
+    min-height: 37px;
+    padding: 0 11px;
+    font-size: 10px;
+  }
+
+  .tech-universe__selected {
+    margin-top: 22px;
+    padding: 15px;
+  }
+
+  .tech-universe__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* ==========================================
+     05 — ABOUT & JOURNEY
+  ========================================== */
+
+  .about-journey {
+    padding: 77px 15px 39px;
+  }
+
+  .about-journey__eyebrow {
+    font-size: 8px;
+  }
+
+  .about-journey__header-grid {
+    gap: 25px;
+  }
+
+  .about-journey__title {
+    font-size: clamp(45px, 12.5vw, 53px);
+    line-height: 0.98;
+  }
+
+  .about-journey__introduction {
+    padding-bottom: 0;
+  }
+
+  .about-journey__introduction p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .about-journey__story-heading {
+    margin-top: 65px;
+    gap: 17px;
+  }
+
+  .about-journey__story-heading h3 {
+    font-size: 34px;
+    line-height: 1.05;
+  }
+
+  .about-journey__timeline-track {
+    left: 9px;
+  }
+
+  .about-journey__milestone {
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 12px;
+    padding: 25px 0;
+  }
+
+  .about-journey__time {
+    font-size: 10px;
+  }
+
+  .about-journey__index {
+    font-size: 34px;
+  }
+
+  .about-journey__milestone-body {
+    margin-left: 0;
+    padding: 16px 13px;
+  }
+
+  .about-journey__milestone-body h4 {
+    font-size: clamp(29px, 8.5vw, 38px);
+    overflow-wrap: break-word;
+  }
+
+  .about-journey__milestone-body p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .about-journey__milestone-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .about-journey__milestone-eyebrow {
+    font-size: 8px;
+  }
+
+  .about-journey__closing {
+    margin-top: 42px;
+    padding: 24px 17px;
+  }
+
+  .about-journey__closing-copy h3 {
+    font-size: clamp(39px, 11vw, 48px);
+  }
+
+  .about-journey__closing-actions {
+    width: 100%;
+  }
+
+  .about-journey__download,
+  .about-journey__linkedin {
+    width: 100%;
+    min-height: 53px;
+  }
+
+  /* ==========================================
+     06 — CONTACT
+  ========================================== */
+
+  .contact-section {
+    padding: 85px 15px 28px;
+    min-height: 0;
+  }
+
+  .contact-section__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .contact-section__title {
+    font-size: clamp(43px, 12vw, 52px);
+    line-height: 0.99;
+    overflow-wrap: break-word;
+  }
+
+  .contact-section__description {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .contact-section__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 11px;
+  }
+
+  .contact-section__primary-button,
+  .contact-section__secondary-button {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .contact-section__socials {
+    display: grid;
+    grid-template-columns: repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+    gap: 7px;
+  }
+
+  .contact-section__social {
+    gap: 4px;
+    padding: 0 5px;
+    font-size: 10px;
+  }
+
+  .contact-section__feature {
+    min-height: 390px;
+    padding: 18px;
+  }
+
+  .contact-section__feature-body h3 {
+    font-size: 37px;
+  }
+
+  .contact-section__footer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==============================================
+   SHORTER MOBILE VIEWPORTS
+   Keep content clear when browser chrome reduces
+   the usable viewport height.
+============================================== */
+
+@media (max-width: 400px) and (max-height: 720px) {
+
+  .hero {
+    min-height: 630px;
+  }
+
+  .hero__background-title {
+    top: 5%;
+  }
+
+  .hero__portrait {
+    top: 10%;
+    height: 36%;
+  }
+
+  .hero__content {
+    top: 52%;
+    bottom: 33px;
+    gap: 7px;
+  }
+
+  .hero__name {
+    font-size: 39px;
+  }
+
+  .hero__specialties {
+    gap: 7px;
+    padding-top: 8px;
+  }
+}
+
+/* ==============================================
+   MOTION ACCESSIBILITY
+============================================== */
+
+@media (max-width: 400px) and
+       (prefers-reduced-motion: reduce) {
+
+  .tech-universe__node,
+  .project-card,
+  .about-journey__milestone-body,
+  .contact-section__social {
+    transition: none;
+  }
+}

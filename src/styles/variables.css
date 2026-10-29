@@ -1,0 +1,17 @@
+
+:root {
+  --color-background: #f4e1c9;
+  --color-background-light: #f9ead7;
+  --color-cream: #fff5e6;
+  --color-brown: #9b6842;
+  --color-brown-dark: #402a1c;
+  --color-brown-soft: #d5b9a8;
+  --color-text: #302017;
+  --color-white: #ffffff;
+
+  --font-display: "Anton", Impact, sans-serif;
+  --font-body: "DM Sans", Arial, sans-serif;
+
+  --page-padding: clamp(20px, 4vw, 70px);
+  --section-width: 1600px;
+}

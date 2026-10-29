@@ -1,0 +1,118 @@
+
+/* =========================================
+   HASSAN JAN — CINEMATIC SCROLL EXPERIENCE
+========================================= */
+
+/* Fixed top progress indicator */
+
+.scroll-experience {
+  position: fixed;
+  z-index: 2000;
+  inset: 0 0 auto;
+  height: 3px;
+  pointer-events: none;
+}
+
+.scroll-experience__track {
+  width: 100%;
+  height: 100%;
+  background: rgba(89, 56, 35, 0.06);
+}
+
+.scroll-experience__progress {
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+
+  background: linear-gradient(
+    90deg,
+    #8c5a39 0%,
+    #b38b59 45%,
+    #e3bd8b 100%
+  );
+
+  box-shadow: 0 0 10px rgba(179, 139, 89, 0.25);
+}
+
+/* Soft section boundaries */
+
+.projects-section,
+.four-panel,
+.final-showcase,
+.contact-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.projects-section::before,
+.four-panel::before,
+.final-showcase::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(116, 74, 44, 0.055),
+    transparent
+  );
+}
+
+/* Gentle final-gallery-to-contact transition */
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(241, 211, 175, 0.085),
+    transparent
+  );
+}
+
+/* Maintain readable section content */
+
+.projects-section__container,
+.four-panel__container,
+.final-showcase__container,
+.contact-section__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smaller displays */
+
+@media (max-width: 700px) {
+  .scroll-experience {
+    height: 2px;
+  }
+
+  .projects-section::before,
+  .four-panel::before,
+  .final-showcase::before,
+  .contact-section::before {
+    height: 55px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-experience__progress {
+    will-change: auto;
+  }
+}

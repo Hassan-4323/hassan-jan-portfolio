@@ -1,0 +1,615 @@
+
+/* ==========================================
+   HASSAN JAN PORTFOLIO
+   TOURISM SHOWCASE — ANIMATED VERSION
+
+   Fits the existing Behind the Build card.
+   Does not modify other project artwork.
+========================================== */
+
+.showcase-tourism {
+  min-width: 0;
+  padding: 14px;
+  background:
+    radial-gradient(
+      circle at 75% 12%,
+      rgba(224, 178, 126, 0.28),
+      transparent 48%
+    ),
+    linear-gradient(140deg, #59372a, #ab7b54);
+}
+
+/* Browser window */
+
+.showcase-tourism__browser {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  min-height: 0;
+  margin-top: 9px;
+  overflow: hidden;
+
+  border-radius: 11px 11px 0 0;
+  background: #f7e9d7;
+  color: #503626;
+
+  box-shadow:
+    0 14px 28px rgba(46, 26, 17, 0.16);
+}
+
+.showcase-tourism__browser-bar {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 9px;
+
+  min-width: 0;
+  padding: 8px 11px;
+
+  border-bottom: 1px solid #ebd7bf;
+  background: #fff8ed;
+  color: #8b6b54;
+  font-size: 9px;
+}
+
+.showcase-tourism__browser-bar > span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.showcase-tourism__dots {
+  display: flex;
+  gap: 5px;
+}
+
+.showcase-tourism__dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e68f89;
+}
+
+.showcase-tourism__dots i:nth-child(2) {
+  background: #e7c07e;
+}
+
+.showcase-tourism__dots i:nth-child(3) {
+  background: #83cba2;
+}
+
+/* Main dashboard */
+
+.showcase-tourism__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  min-height: 0;
+  overflow: hidden;
+  padding: 9px 12px;
+}
+
+.showcase-tourism__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.showcase-tourism__heading small,
+.showcase-tourism__heading strong {
+  display: block;
+}
+
+.showcase-tourism__heading small {
+  color: #a47554;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.showcase-tourism__heading strong {
+  margin-top: 3px;
+
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 32px);
+  font-weight: 400;
+  line-height: 0.96;
+}
+
+.showcase-tourism__heading strong span {
+  display: block;
+  color: #ad744d;
+}
+
+/* Rotating compass */
+
+.showcase-tourism__compass {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #ead4bd;
+  border-radius: 50%;
+  background: #f4ddc5;
+  color: #956a48;
+
+  animation:
+    tourism-compass-spin 12s linear infinite,
+    tourism-compass-glow 3.5s ease-in-out infinite;
+}
+
+@keyframes tourism-compass-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tourism-compass-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(182, 126, 82, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(182, 126, 82, 0.11);
+  }
+}
+
+/* Animated search bar */
+
+.showcase-tourism__search {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  min-height: 29px;
+  margin-top: 7px;
+  padding: 0 10px;
+
+  overflow: hidden;
+  border: 1px solid #ead8c3;
+  border-radius: 30px;
+
+  background: #fff;
+  color: #987b66;
+  font-size: 9px;
+}
+
+.showcase-tourism__search::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(227, 189, 144, 0.22),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: tourism-search-shine 5s ease-in-out infinite;
+}
+
+@keyframes tourism-search-shine {
+  0%, 20% {
+    left: -60%;
+  }
+
+  55%, 100% {
+    left: 120%;
+  }
+}
+
+.showcase-tourism__search span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Section heading */
+
+.showcase-tourism__subheading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+  margin: 8px 0 5px;
+
+  color: #73533e;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Destination cards */
+
+.showcase-tourism__places {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.showcase-tourism__place {
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 8px;
+  background: #fff;
+
+  box-shadow:
+    0 5px 12px rgba(76, 47, 29, 0.11);
+
+  animation: tourism-card-float 3.8s ease-in-out infinite alternate;
+}
+
+.showcase-tourism__place:nth-child(2) {
+  animation-delay: -1.9s;
+}
+
+@keyframes tourism-card-float {
+  from {
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(76, 47, 29, 0.09);
+  }
+
+  to {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 19px rgba(76, 47, 29, 0.16);
+  }
+}
+
+/* Animated landscapes */
+
+.showcase-tourism__landscape {
+  position: relative;
+  height: 48px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    #9dc5c9,
+    #f2d4a5
+  );
+}
+
+.showcase-tourism__landscape--skardu {
+  background: linear-gradient(
+    180deg,
+    #96b3d0,
+    #d6d5d1
+  );
+}
+
+/* Sun glow */
+
+.showcase-tourism__sun {
+  position: absolute;
+  z-index: 1;
+
+  top: 7px;
+  right: 15%;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+  background: #fff4c4;
+  box-shadow: 0 0 12px #ffedbe;
+
+  animation: tourism-sun-glow 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes tourism-sun-glow {
+  from {
+    opacity: 0.8;
+    transform: scale(0.9);
+    box-shadow: 0 0 8px #ffedbe;
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.16);
+    box-shadow: 0 0 23px #fff2bd;
+  }
+}
+
+/* Mountains move independently */
+
+.showcase-tourism__mountain {
+  position: absolute;
+  width: 120%;
+  height: 85px;
+
+  clip-path: polygon(
+    0 100%,
+    30% 18%,
+    47% 55%,
+    70% 6%,
+    100% 100%
+  );
+}
+
+.showcase-tourism__mountain--back {
+  z-index: 1;
+  left: -12%;
+  bottom: -43%;
+  background: #8c9e91;
+
+  animation: tourism-mountain-back 6s ease-in-out infinite alternate;
+}
+
+.showcase-tourism__mountain--front {
+  z-index: 2;
+  left: 11%;
+  bottom: -65%;
+  background: #4d796b;
+
+  animation: tourism-mountain-front 5s ease-in-out infinite alternate;
+}
+
+@keyframes tourism-mountain-back {
+  from {
+    transform: translateX(-3%);
+  }
+
+  to {
+    transform: translateX(3%);
+  }
+}
+
+@keyframes tourism-mountain-front {
+  from {
+    transform: translateX(3%);
+  }
+
+  to {
+    transform: translateX(-3%);
+  }
+}
+
+.showcase-tourism__landscape--skardu
+.showcase-tourism__mountain--back {
+  background: #8194a4;
+}
+
+.showcase-tourism__landscape--skardu
+.showcase-tourism__mountain--front {
+  background: #526d80;
+}
+
+/* Destination labels */
+
+.showcase-tourism__place-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+
+  min-height: 29px;
+  padding: 5px 7px;
+}
+
+.showcase-tourism__place-info strong,
+.showcase-tourism__place-info small {
+  display: block;
+}
+
+.showcase-tourism__place-info strong {
+  color: #60412e;
+  font-size: 9px;
+}
+
+.showcase-tourism__place-info small {
+  margin-top: 2px;
+  color: #a18b7b;
+  font-size: 7px;
+}
+
+.showcase-tourism__place-info svg {
+  flex-shrink: 0;
+  color: #ad815c;
+}
+
+/* Feature badges */
+
+.showcase-tourism__features {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 5px;
+
+  margin-top: 7px;
+}
+
+.showcase-tourism__features span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 6px;
+  border-radius: 20px;
+
+  background: #eddcc8;
+  color: #79523a;
+
+  font-size: 7px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   LAPTOPS / TABLETS
+========================================== */
+
+@media (max-width: 1100px) {
+  .showcase-tourism {
+    padding: 12px;
+  }
+
+  .showcase-tourism__heading strong {
+    font-size: clamp(23px, 3vw, 30px);
+  }
+
+  .showcase-tourism__landscape {
+    height: 45px;
+  }
+
+  .showcase-tourism__content {
+    padding: 8px 10px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .showcase-tourism {
+    padding: 12px;
+  }
+
+  .showcase-tourism__browser {
+    margin-top: 7px;
+  }
+
+  .showcase-tourism__browser-bar {
+    padding: 7px 9px;
+  }
+
+  .showcase-tourism__content {
+    padding: 7px 10px;
+  }
+
+  .showcase-tourism__heading strong {
+    font-size: clamp(22px, 6vw, 29px);
+  }
+
+  .showcase-tourism__compass {
+    width: 30px;
+    height: 30px;
+  }
+
+  .showcase-tourism__search {
+    min-height: 27px;
+    margin-top: 6px;
+  }
+
+  .showcase-tourism__subheading {
+    margin: 6px 0 4px;
+  }
+
+  .showcase-tourism__landscape {
+    height: 40px;
+  }
+
+  .showcase-tourism__place-info {
+    min-height: 25px;
+    padding: 4px 6px;
+  }
+
+  .showcase-tourism__features {
+    margin-top: 6px;
+  }
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 380px) {
+  .showcase-tourism {
+    padding: 9px;
+  }
+
+  .showcase-tourism__browser {
+    margin-top: 5px;
+  }
+
+  .showcase-tourism__content {
+    padding: 6px 8px;
+  }
+
+  .showcase-tourism__heading strong {
+    font-size: 21px;
+  }
+
+  .showcase-tourism__heading small {
+    font-size: 6px;
+  }
+
+  .showcase-tourism__compass {
+    width: 26px;
+    height: 26px;
+  }
+
+  .showcase-tourism__search {
+    min-height: 24px;
+    margin-top: 5px;
+  }
+
+  .showcase-tourism__subheading {
+    margin: 5px 0 3px;
+    font-size: 7px;
+  }
+
+  .showcase-tourism__places {
+    gap: 5px;
+  }
+
+  .showcase-tourism__landscape {
+    height: 32px;
+  }
+
+  .showcase-tourism__place-info {
+    min-height: 22px;
+  }
+
+  .showcase-tourism__place-info strong {
+    font-size: 8px;
+  }
+
+  .showcase-tourism__place-info small {
+    font-size: 6px;
+  }
+
+  .showcase-tourism__features span {
+    padding: 3px 5px;
+    font-size: 6px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-tourism__compass,
+  .showcase-tourism__search::before,
+  .showcase-tourism__place,
+  .showcase-tourism__sun,
+  .showcase-tourism__mountain {
+    animation: none !important;
+  }
+}
